@@ -1,6 +1,7 @@
 <template>
   <textarea
-    @focus="resize"
+    @focus="focus"
+    @blur="blur"
     v-model="val"
     :style="computedStyles"
   ></textarea>
@@ -82,6 +83,16 @@ export default {
   },
 
   methods: {
+    
+    focus:function(){
+      this.resize();
+      this.$emit('focus');
+    },
+    
+    blur:function(){
+      this.$emit('blur');
+    },
+    
     /*
      * Update local val with prop value
      */
