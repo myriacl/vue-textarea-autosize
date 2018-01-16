@@ -81,18 +81,14 @@ export default {
       return objStyles
     }
   },
-
   methods: {
-    
-    focus:function(){
-      this.resize();
-      this.$emit('focus');
+    focus () {
+      this.resize()
+      this.$emit('focus')
     },
-    
-    blur:function(){
-      this.$emit('blur');
+    blur () {
+      this.$emit('blur')
     },
-    
     /*
      * Update local val with prop value
      */
